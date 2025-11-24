@@ -133,14 +133,22 @@ body {
 
 .hero-title {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
     animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
+.hero-role {
+    font-size: 2rem;
     color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #ccc;
     margin-bottom: 1.5rem;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
@@ -658,8 +666,12 @@ body {
         font-size: 2rem;
     }
 
+    .hero-role {
+        font-size: 1.5rem;
+    }
+
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero-description {
