@@ -1,11 +1,13 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with proper offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offset = 80; // Height of fixed navbar
-            const targetPosition = target.offsetTop - offset;
+            const navbarHeight = 70;
+            const additionalPadding = 20;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - additionalPadding;
+            
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -14,23 +16,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.background = 'var(--dark-bg)';
-        navbar.style.backdropFilter = 'none';
-    }
-    
-    lastScroll = currentScroll;
-});
+// Navbar and scroll effects (handled in consolidated scroll handler below)
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
@@ -55,16 +41,19 @@ document.querySelectorAll('.timeline-item, .skill-category, .cert-card, .stat-ca
     observer.observe(el);
 });
 
-// Add active state to navigation based on scroll position
+// Active navigation state function
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
-window.addEventListener('scroll', () => {
+function updateActiveNav() {
     let current = '';
+    const scrollPosition = window.pageYOffset + 150; // Account for navbar height
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 100)) {
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
@@ -75,7 +64,7 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
-});
+}
 
 // Add typing effect to hero title (optional enhancement)
 function typeWriter(element, text, speed = 100) {
@@ -93,14 +82,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// Parallax effect (handled in consolidated scroll handler)
 
 // Skills hover effect - show proficiency level
 document.querySelectorAll('.skill-item').forEach(item => {
@@ -154,11 +136,6 @@ style.textContent = `
         from { opacity: 1; }
         to { opacity: 0; }
     }
-    
-    .nav-menu a.active {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
-    }
 `;
 document.head.appendChild(style);
 
@@ -176,48 +153,29 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Add scroll to top button
+// Enhanced scroll to top button
 const scrollTopBtn = document.createElement('button');
+scrollTopBtn.id = 'scrollTopBtn';
 scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-scrollTopBtn.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: none;
-    z-index: 999;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
-`;
+scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
 
 scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-scrollTopBtn.addEventListener('mouseenter', () => {
-    scrollTopBtn.style.transform = 'scale(1.1)';
-});
-
-scrollTopBtn.addEventListener('mouseleave', () => {
-    scrollTopBtn.style.transform = 'scale(1)';
+    window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+    });
 });
 
 document.body.appendChild(scrollTopBtn);
 
-window.addEventListener('scroll', () => {
+// Show/hide scroll to top button function
+function toggleScrollTopBtn() {
     if (window.pageYOffset > 300) {
-        scrollTopBtn.style.display = 'block';
+        scrollTopBtn.classList.add('visible');
     } else {
-        scrollTopBtn.style.display = 'none';
+        scrollTopBtn.classList.remove('visible');
     }
-});
+}
 
 // Mobile menu toggle (if you add hamburger menu later)
 function initMobileMenu() {
@@ -243,23 +201,46 @@ window.addEventListener('load', () => {
     document.querySelector('.hero').style.opacity = '1';
 });
 
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+// Consolidated scroll handler for better performance
+let scrollTicking = false;
+
+function handleScroll() {
+    const currentScroll = window.pageYOffset;
+    
+    // Navbar effects
+    const navbar = document.querySelector('.navbar');
+    if (currentScroll > 100) {
+        navbar.style.background = 'rgba(26, 26, 26, 0.98)';
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+        navbar.style.background = 'var(--dark-bg)';
+        navbar.style.backdropFilter = 'none';
+        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    }
+    
+    // Update active navigation
+    updateActiveNav();
+    
+    // Toggle scroll to top button
+    toggleScrollTopBtn();
+    
+    // Parallax effect
+    const hero = document.querySelector('.hero');
+    if (hero && currentScroll < 800) {
+        hero.style.transform = `translateY(${currentScroll * 0.3}px)`;
+        hero.style.opacity = 1 - (currentScroll / 800);
+    }
+    
+    scrollTicking = false;
 }
 
-// Apply debounce to scroll events
-window.addEventListener('scroll', debounce(() => {
-    // Your scroll-based functions here
-}, 10));
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(handleScroll);
+        scrollTicking = true;
+    }
+});
 
 console.log('🚀 Portfolio loaded successfully!');
 console.log('💼 Rakesh Kumar Mallam - Senior Technical Consultant');
