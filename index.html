@@ -23,7 +23,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#game">Play Game</a></li>
                 <li><a href="#certifications">Certifications</a></li>
-                <li><a href="https://rmallam.github.io/blogs/#/blogs">Blogs</a></li>
+                <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -501,6 +501,40 @@
         </div>
     </section>
 
+    <!-- Blogs Section -->
+    <section id="blogs" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <p class="section-subtitle">Insights on Cloud Native Technologies, DevSecOps, and Enterprise Architecture</p>
+            
+            <!-- Blog Categories -->
+            <div id="blog-categories" class="blog-categories">
+                <!-- Categories will be loaded dynamically -->
+            </div>
+
+            <!-- Blog List -->
+            <div id="blog-list" class="blog-list-container" style="display: none;">
+                <button class="back-to-categories" onclick="showCategories()">
+                    <i class="fas fa-arrow-left"></i> Back to Categories
+                </button>
+                <h3 id="category-title" class="category-title"></h3>
+                <div id="blogs-container" class="blogs-grid">
+                    <!-- Blog posts will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Blog Post View -->
+            <div id="blog-post" class="blog-post-container" style="display: none;">
+                <button class="back-to-list" onclick="backToList()">
+                    <i class="fas fa-arrow-left"></i> Back to Posts
+                </button>
+                <article id="blog-content" class="blog-content">
+                    <!-- Blog content will be loaded dynamically -->
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -547,7 +581,11 @@
         </div>
     </footer>
 
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.0/marked.min.js"></script>
+    
     <script src="script.js"></script>
     <script src="game.js"></script>
+    <script src="blogs.js"></script>
 </body>
 </html>
