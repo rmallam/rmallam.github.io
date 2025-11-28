@@ -1,0 +1,180 @@
+{
+  "personal": {
+    "name": "Rakesh Kumar Mallam",
+    "firstName": "Rakesh",
+    "role": "Senior Technical Consultant",
+    "company": "Red Hat",
+    "tagline": "Cloud Native Architecture • DevSecOps • Enterprise Transformation",
+    "description": "15+ years driving Digital Transformation and Advanced DevSecOps at enterprise scale. Expert in the entire Software Delivery Lifecycle from architecture to cloud deployment.",
+    "location": "Australia",
+    "availability": "Always up for a chat",
+    "resumeFile": "resume/CV_MALLAM_RAKESHKUMAR.pdf"
+  },
+
+  "contact": {
+    "email": "mallamrakesh@gmail.com",
+    "phone": "+91 9100656947",
+    "linkedin": "https://linkedin.com/in/rakeshkumarmallam",
+    "github": "https://github.com/rmallam"
+  },
+
+  "about": {
+    "intro": "Hey there! I'm Rakesh – a passionate architect, curious traveler, and lover of all things tech. I am a results-oriented Senior Technical Consultant with <strong>15+ years</strong> of hands-on experience driving Digital Transformation and Advanced DevSecOps at the enterprise level. Currently serving as a <strong>Trusted Advisor</strong> at Red Hat, I specialize in aligning complex technical solutions with customer business outcomes.",
+    "expertise": "My expertise spans the entire Software Delivery Lifecycle, from architecture and development to cloud deployment and operations across AWS, Azure, and OpenShift. I excel at orchestrating technical teams and implementing CI/CD pipelines that drive measurable business results.",
+    "personal": "When I'm not architecting solutions, I'm likely planning my next travel adventure with my family, discovering new cuisines, or chasing after my little ones. I share my technical insights and experiences on my blog, where you'll find detailed articles on cloud-native technologies, DevSecOps, and enterprise architecture.",
+    "stats": {
+      "yearsExperience": "15+",
+      "projectsDelivered": "50+",
+      "certifications": "4"
+    }
+  },
+
+  "experience": [
+    {
+      "title": "Sr Architect / Consultant",
+      "company": "Red Hat",
+      "icon": "fab fa-redhat",
+      "period": "Jun 2020 - Present",
+      "highlights": [
+        "<strong>Trusted Advisor:</strong> Aligned complex technical architectures with customer business requirements driving digital transformation goals",
+        "Led multi-customer engagements architecting modern DevOps/DevSecOps practices on OpenShift 3/4, Azure RedHat OpenShift, and AWS",
+        "Designed distributed stateful services (Redis, RabbitMQ) across multiple OpenShift clusters using Skupper",
+        "Deployed scalable ARO platform using IaC (Terraform/Ansible) with end-to-end CI/CD (ArgoCD/Tekton)",
+        "<strong>Recognition:</strong> Top Gun Consultant & Most Trusted Consultant - Red Hat Services ANZ"
+      ],
+      "technologies": ["OpenShift", "Kubernetes", "AWS", "Azure", "Terraform", "ArgoCD", "Tekton"]
+    },
+    {
+      "title": "Technical Lead, DevOps and Automation",
+      "company": "National Australia Bank",
+      "icon": "fas fa-university",
+      "period": "Jan 2019 - Jan 2020",
+      "highlights": [
+        "Designed and architected scalable Enterprise DevOps Tools stack (GitHub, Artifactory, SonarQube, Jenkins) on AWS",
+        "Defined security standards across AWS stack, embedding DevSecOps best practices into platform design",
+        "Provided coaching and technical guidance to development teams ensuring enterprise-wide adoption"
+      ],
+      "technologies": ["AWS", "Jenkins", "GitHub", "Artifactory", "React"]
+    },
+    {
+      "title": "Sr Engineer, DevOps and Automation",
+      "company": "National Australia Bank (NABConnect)",
+      "icon": "fas fa-university",
+      "period": "Nov 2016 - Jan 2019",
+      "highlights": [
+        "Designed automated self-healing Jenkins platform in AWS with autoscaling for CI/CD pipelines",
+        "Implemented <strong>Blue/Green deployment strategy</strong> enabling zero-downtime production releases",
+        "Automated AMI lifecycle using Packer, Python, and Jenkins reducing provisioning from days to minutes"
+      ],
+      "technologies": ["AWS", "Jenkins", "Python", "AppDynamics"]
+    },
+    {
+      "title": "DevOps Lead",
+      "company": "Infosys Australia - NBN",
+      "icon": "fas fa-building",
+      "period": "Apr 2016 - Oct 2016",
+      "highlights": [
+        "Developed end-to-end solution for environment creation using Ansible and Jenkins",
+        "Led DevOps team guiding automated deployment solutions for application servers"
+      ],
+      "technologies": ["Ansible", "Jenkins", "Docker"]
+    },
+    {
+      "title": "DevOps Engineer",
+      "company": "Tech Mahindra, Australia",
+      "icon": "fas fa-building",
+      "period": "Apr 2010 - Mar 2016",
+      "highlights": [
+        "Engineered Automated Keep-Alive Jenkins jobs enabling site-by-site zero-outage deployments",
+        "Automated AWS environment build including WebSphere configuration using Puppet modules",
+        "Implemented Jenkins automation for 200+ WebSphere configurations eliminating manual errors",
+        "<strong>Recognition:</strong> S*tar rating (highest) for 4 consecutive years (2011-2015)"
+      ],
+      "technologies": ["IBM WebSphere", "Puppet", "Jenkins", "AWS"]
+    }
+  ],
+
+  "skills": [
+    {
+      "category": "Cloud & Containers",
+      "icon": "fas fa-cloud",
+      "items": ["OpenShift", "Kubernetes", "AWS", "Azure", "ECS/EKS/AKS", "Docker"]
+    },
+    {
+      "category": "DevOps & Automation",
+      "icon": "fas fa-cogs",
+      "items": ["Jenkins", "ArgoCD", "Tekton", "Ansible", "Terraform", "Puppet", "GitHub Actions"]
+    },
+    {
+      "category": "Programming & Scripting",
+      "icon": "fas fa-code",
+      "items": ["Python", "Go", "Java", "Shell Scripting", "React.js"]
+    },
+    {
+      "category": "Monitoring & Observability",
+      "icon": "fas fa-chart-line",
+      "items": ["Prometheus", "Grafana", "AppDynamics", "Splunk", "CloudWatch", "New Relic"]
+    },
+    {
+      "category": "Middleware & API",
+      "icon": "fas fa-network-wired",
+      "items": ["RedHat 3Scale", "AWS API Gateway", "IBM WebSphere", "Oracle WebLogic"]
+    },
+    {
+      "category": "Databases",
+      "icon": "fas fa-database",
+      "items": ["PostgreSQL", "Oracle", "DB2", "Redis", "RabbitMQ"]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Red Hat OpenShift Developer",
+      "issuer": "Red Hat",
+      "icon": "fab fa-redhat",
+      "color": "redhat"
+    },
+    {
+      "name": "Red Hat OpenShift Administrator",
+      "issuer": "Red Hat",
+      "icon": "fab fa-redhat",
+      "color": "redhat"
+    },
+    {
+      "name": "AWS Certified Solution Architect Associate",
+      "issuer": "Amazon Web Services",
+      "icon": "fab fa-aws",
+      "color": "aws"
+    },
+    {
+      "name": "Azure Fundamentals Certified",
+      "issuer": "Microsoft Azure",
+      "icon": "fab fa-microsoft",
+      "color": "azure"
+    }
+  ],
+
+  "recognition": [
+    {
+      "title": "Top Gun Consultant",
+      "description": "Red Hat Services ANZ",
+      "icon": "fas fa-trophy"
+    },
+    {
+      "title": "Most Trusted Consultant",
+      "description": "RedHat Services ANZ",
+      "icon": "fas fa-award"
+    },
+    {
+      "title": "High Performer",
+      "description": "Every Annual Review at NAB",
+      "icon": "fas fa-star"
+    },
+    {
+      "title": "S*tar Rating",
+      "description": "4 consecutive years at Tech Mahindra",
+      "icon": "fas fa-medal"
+    }
+  ]
+}
+
