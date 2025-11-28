@@ -2404,3 +2404,412 @@ body {
         font-size: 1rem;
     }
 }
+
+/* ================================================
+   DARK MODE STYLES
+   ================================================ */
+[data-theme="dark"] {
+    --light-bg: #0F0F0F;
+    --light-surface: #1A1A1A;
+    --light-muted: #252525;
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+}
+
+[data-theme="dark"] .section {
+    background: var(--light-bg);
+}
+
+[data-theme="dark"] .section-alt {
+    background: var(--light-muted);
+}
+
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .blog-category-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .blog-content,
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .recognition-section,
+[data-theme="dark"] .game-container {
+    background: var(--light-surface);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .tag,
+[data-theme="dark"] .skill-item,
+[data-theme="dark"] .recognition-item {
+    background: var(--light-muted);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .timeline::before {
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--accent-color) 100%);
+}
+
+[data-theme="dark"] .timeline-marker {
+    background: var(--light-surface);
+}
+
+[data-theme="dark"] .timeline-content::before {
+    background: var(--light-surface);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .level-info,
+[data-theme="dark"] .pipeline-area {
+    background: linear-gradient(135deg, var(--light-muted) 0%, var(--light-bg) 100%);
+}
+
+[data-theme="dark"] .toolbox {
+    background: var(--light-surface);
+}
+
+[data-theme="dark"] .pipeline-slot {
+    background: var(--light-surface);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .pipeline-stage {
+    background: var(--light-surface);
+}
+
+[data-theme="dark"] .hint-box {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: #F59E0B;
+}
+
+[data-theme="dark"] .hint-box span {
+    color: #FCD34D;
+}
+
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .result-content {
+    background: var(--light-surface);
+}
+
+[data-theme="dark"] .blog-post-body pre {
+    background: #000;
+}
+
+[data-theme="dark"] .blog-post-body code {
+    background: var(--light-muted);
+}
+
+[data-theme="dark"] .blog-post-body blockquote {
+    background: var(--light-muted);
+}
+
+/* ================================================
+   THEME TOGGLE BUTTON
+   ================================================ */
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transition-base);
+    margin-right: 8px;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(15deg);
+}
+
+[data-theme="dark"] .theme-toggle i::before {
+    content: "\f185"; /* sun icon */
+}
+
+/* ================================================
+   RESUME FLOATING BUTTON
+   ================================================ */
+.resume-float-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 32px;
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+    z-index: 998;
+    transition: var(--transition-base);
+    animation: pulse-glow 2s infinite;
+}
+
+.resume-float-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+}
+
+.resume-float-btn i {
+    font-size: 1.2rem;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(220, 38, 38, 0.6);
+    }
+}
+
+/* ================================================
+   TERMINAL TOGGLE BUTTON
+   ================================================ */
+.terminal-toggle-btn {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--dark-bg);
+    color: #22C55E;
+    border: 2px solid #22C55E;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+}
+
+.terminal-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(34, 197, 94, 0.5);
+    background: #22C55E;
+    color: var(--dark-bg);
+}
+
+/* ================================================
+   INTERACTIVE TERMINAL
+   ================================================ */
+.terminal-container {
+    position: fixed;
+    bottom: 100px;
+    left: 32px;
+    width: 600px;
+    max-width: calc(100vw - 64px);
+    background: #0D1117;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    animation: terminalSlideUp 0.3s ease;
+}
+
+.terminal-container.hidden {
+    display: none;
+}
+
+@keyframes terminalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.terminal-header {
+    background: #161B22;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #30363D;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.term-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.term-btn.close { background: #FF5F56; }
+.term-btn.minimize { background: #FFBD2E; }
+.term-btn.maximize { background: #27C93F; }
+
+.terminal-title {
+    color: #8B949E;
+    font-size: 0.85rem;
+}
+
+.terminal-close {
+    background: none;
+    border: none;
+    color: #8B949E;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: var(--transition-base);
+}
+
+.terminal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #F0F6FC;
+}
+
+.terminal-body {
+    padding: 16px;
+    height: 350px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-output {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+
+.terminal-output p {
+    margin: 4px 0;
+    color: #C9D1D9;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.terminal-welcome {
+    color: #58A6FF !important;
+    font-weight: 600;
+    margin-bottom: 8px !important;
+}
+
+.terminal-hint {
+    color: #8B949E !important;
+}
+
+.cmd-highlight {
+    color: #22C55E;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.terminal-command {
+    color: #22C55E !important;
+}
+
+.terminal-response {
+    color: #C9D1D9 !important;
+    padding-left: 12px;
+    border-left: 2px solid #30363D;
+    margin: 8px 0 !important;
+}
+
+.terminal-error {
+    color: #F85149 !important;
+}
+
+.terminal-success {
+    color: #3FB950 !important;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #161B22;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #30363D;
+}
+
+.terminal-prompt {
+    color: #22C55E;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #F0F6FC;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.terminal-input::placeholder {
+    color: #484F58;
+}
+
+/* Terminal Responsive */
+@media (max-width: 768px) {
+    .terminal-container {
+        left: 16px;
+        right: 16px;
+        bottom: 80px;
+        width: auto;
+        max-width: none;
+    }
+    
+    .terminal-toggle-btn {
+        left: 16px;
+        bottom: 16px;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .resume-float-btn {
+        right: 16px;
+        bottom: 80px;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .resume-float-btn span {
+        display: none;
+    }
+    
+    .resume-float-btn i {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-body {
+        height: 280px;
+    }
+    
+    .terminal-prompt {
+        font-size: 0.8rem;
+    }
+    
+    .terminal-input {
+        font-size: 0.85rem;
+    }
+}

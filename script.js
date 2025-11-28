@@ -365,6 +365,45 @@ function onScroll() {
 }
 
 // ================================================
+// THEME TOGGLE (DARK/LIGHT MODE)
+// ================================================
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        
+        // Show toast
+        showToast(`${newTheme === 'dark' ? '🌙 Dark' : '☀️ Light'} mode activated`);
+    });
+}
+
+function updateThemeIcon(theme) {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+}
+
+// ================================================
 // INITIALIZE EVERYTHING
 // ================================================
 function init() {
@@ -375,6 +414,7 @@ function init() {
     initSkillInteractions();
     initContactInteractions();
     initKeyboardNav();
+    initThemeToggle();
     toggleScrollTopBtn = initScrollToTop();
     
     // Optional: Enable typing effect
@@ -390,6 +430,7 @@ function init() {
     // Log ready message
     console.log('🚀 Portfolio loaded successfully!');
     console.log('💼 Rakesh Kumar Mallam - Senior Technical Consultant');
+    console.log('💡 Try the terminal! Click the green button in the bottom left.');
 }
 
 // Run initialization

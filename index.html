@@ -29,11 +29,54 @@
                 <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+            </button>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
+
+    <!-- Floating Resume Download Button -->
+    <a href="https://raw.githubusercontent.com/rmallam/rmallam.github.io/main/resume/Rakesh_Mallam_Resume.pdf" 
+       class="resume-float-btn" 
+       id="resume-btn"
+       download="Rakesh_Mallam_Resume.pdf"
+       title="Download Resume">
+        <i class="fas fa-file-download"></i>
+        <span>Resume</span>
+    </a>
+
+    <!-- Terminal Button -->
+    <button class="terminal-toggle-btn" id="terminal-toggle" title="Open Terminal">
+        <i class="fas fa-terminal"></i>
+    </button>
+
+    <!-- Interactive Terminal -->
+    <div class="terminal-container hidden" id="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="term-btn close"></span>
+                <span class="term-btn minimize"></span>
+                <span class="term-btn maximize"></span>
+            </div>
+            <span class="terminal-title">rakesh@portfolio: ~</span>
+            <button class="terminal-close" id="terminal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+            <div class="terminal-output" id="terminal-output">
+                <p class="terminal-welcome">Welcome to Rakesh's Portfolio Terminal! 🚀</p>
+                <p class="terminal-hint">Type <span class="cmd-highlight">help</span> to see available commands.</p>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">visitor@rakesh.dev:~$</span>
+                <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -613,5 +656,6 @@
     <script src="script.js"></script>
     <script src="game.js"></script>
     <script src="blogs.js"></script>
+    <script src="terminal.js"></script>
 </body>
 </html>
