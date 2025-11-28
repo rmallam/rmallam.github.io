@@ -144,6 +144,14 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.nav-brand:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
 }
 
 .nav-brand h2 {
