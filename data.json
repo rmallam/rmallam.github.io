@@ -45,7 +45,7 @@
       "technologies": ["OpenShift", "Kubernetes", "AWS", "Azure", "Terraform", "ArgoCD", "Tekton"]
     },
     {
-      "title": "Platform Architect & Technical Lead",
+      "title": "DevOps Architect & Technical Lead",
       "company": "National Australia Bank",
       "icon": "fas fa-university",
       "period": "Jan 2019 - Jan 2020",
@@ -69,7 +69,7 @@
       "technologies": ["AWS", "Jenkins", "Python", "AppDynamics"]
     },
     {
-      "title": "DevOps Lead & Solutions Architect",
+      "title": "DevOps Lead",
       "company": "Infosys Australia - NBN",
       "icon": "fas fa-building",
       "period": "Apr 2016 - Oct 2016",
