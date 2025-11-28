@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rakesh Kumar Mallam - Senior Technical Consultant | DevSecOps & Cloud Architecture Expert">
-    <meta name="keywords" content="DevOps, Cloud, AWS, Azure, OpenShift, Kubernetes, Red Hat">
+    <meta name="description" content="Rakesh Kumar Mallam - Senior Technical Consultant | DevSecOps & Cloud Architecture Expert with 15+ years of experience">
+    <meta name="keywords" content="DevOps, Cloud, AWS, Azure, OpenShift, Kubernetes, Red Hat, Cloud Architecture, DevSecOps">
     <meta name="author" content="Rakesh Kumar Mallam">
+    <meta name="theme-color" content="#DC2626">
     <title>Rakesh Kumar Mallam | Senior Technical Consultant</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h2><i class="fas fa-laptop-code"></i> Portfolio</h2>
+                <h2><i class="fas fa-terminal"></i> Rakesh<span class="accent">.</span></h2>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -26,26 +29,33 @@
                 <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Rakesh Kumar Mallam</h1>
-                <p class="hero-role">Senior Technical Consultant</p>
-                <p class="hero-subtitle">Cloud Native Architecture | DevSecOps | Enterprise Transformation</p>
-                <p class="hero-description">
-                    15+ years driving Digital Transformation and Advanced DevSecOps at enterprise scale.
-                    Expert in the entire Software Delivery Lifecycle from architecture to cloud deployment.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                    <a href="https://github.com/rakeshkumarmallam" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-circle"></i>
+                Available for consulting
+            </div>
+            <h1 class="hero-title">Rakesh Kumar <span class="highlight">Mallam</span></h1>
+            <p class="hero-role">Senior Technical Consultant</p>
+            <p class="hero-subtitle">Cloud Native Architecture • DevSecOps • Enterprise Transformation</p>
+            <p class="hero-description">
+                15+ years driving Digital Transformation and Advanced DevSecOps at enterprise scale.
+                Expert in the entire Software Delivery Lifecycle from architecture to cloud deployment.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Get in Touch
+                </a>
+                <a href="https://github.com/rmallam" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </div>
     </section>
@@ -53,7 +63,10 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">About <span class="accent">Me</span></h2>
+                <div class="section-divider"></div>
+            </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>
@@ -71,8 +84,8 @@
                     <p>
                         When I'm not architecting solutions, I'm likely planning my next travel adventure with my family, 
                         discovering new cuisines, or chasing after my little ones. I share my technical insights and experiences 
-                        on my <a href="https://rmallam.github.io/blogs/#/blogs" style="color: #EE0000; text-decoration: underline;">blog</a>, 
-                        where you'll find detailed articles on cloud-native technologies, DevSecOps, and enterprise architecture.
+                        on my <a href="#blogs">blog</a>, where you'll find detailed articles on cloud-native technologies, 
+                        DevSecOps, and enterprise architecture.
                     </p>
                 </div>
                 <div class="about-stats">
@@ -96,7 +109,10 @@
     <!-- Experience Section -->
     <section id="experience" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <div class="section-header">
+                <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
+                <p class="section-subtitle">A journey through enterprise digital transformation</p>
+            </div>
             <div class="timeline">
                 <!-- Red Hat -->
                 <div class="timeline-item">
@@ -104,7 +120,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>Sr Architect / Consultant</h3>
-                            <span class="company">Red Hat</span>
+                            <span class="company"><i class="fab fa-redhat"></i> Red Hat</span>
                             <span class="date">Jun 2020 - Present</span>
                         </div>
                         <ul class="timeline-list">
@@ -132,7 +148,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>Technical Lead, DevOps and Automation</h3>
-                            <span class="company">National Australia Bank</span>
+                            <span class="company"><i class="fas fa-university"></i> National Australia Bank</span>
                             <span class="date">Jan 2019 - Jan 2020</span>
                         </div>
                         <ul class="timeline-list">
@@ -156,7 +172,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>Sr Engineer, DevOps and Automation</h3>
-                            <span class="company">National Australia Bank (NABConnect)</span>
+                            <span class="company"><i class="fas fa-university"></i> National Australia Bank (NABConnect)</span>
                             <span class="date">Nov 2016 - Jan 2019</span>
                         </div>
                         <ul class="timeline-list">
@@ -179,7 +195,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>DevOps Lead</h3>
-                            <span class="company">Infosys Australia - NBN</span>
+                            <span class="company"><i class="fas fa-building"></i> Infosys Australia - NBN</span>
                             <span class="date">Apr 2016 - Oct 2016</span>
                         </div>
                         <ul class="timeline-list">
@@ -200,7 +216,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>DevOps Engineer</h3>
-                            <span class="company">Tech Mahindra, Australia</span>
+                            <span class="company"><i class="fas fa-building"></i> Tech Mahindra, Australia</span>
                             <span class="date">Apr 2010 - Mar 2016</span>
                         </div>
                         <ul class="timeline-list">
@@ -224,7 +240,10 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-header">
+                <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+                <p class="section-subtitle">Technologies and tools I work with daily</p>
+            </div>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><i class="fas fa-cloud"></i> Cloud & Containers</h3>
@@ -239,7 +258,7 @@
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> DevOps & Automation</h3>
+                    <h3><i class="fas fa-cogs"></i> DevOps & Automation</h3>
                     <div class="skill-items">
                         <span class="skill-item">Jenkins</span>
                         <span class="skill-item">ArgoCD</span>
@@ -301,11 +320,10 @@
     <!-- Interactive Game Section -->
     <section id="game" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">🎮 Build Your CI/CD Pipeline</h2>
-            <p class="game-intro">
-                Think you know DevOps? Test your skills by building a complete CI/CD pipeline! 
-                Drag and connect the stages in the correct order to deploy successfully.
-            </p>
+            <div class="section-header">
+                <h2 class="section-title">🎮 Build Your <span class="accent">CI/CD Pipeline</span></h2>
+                <p class="section-subtitle">Think you know DevOps? Test your skills by building a complete CI/CD pipeline!</p>
+            </div>
             
             <div class="game-container">
                 <!-- Game Header -->
@@ -442,7 +460,10 @@
     <!-- Certifications Section -->
     <section id="certifications" class="section">
         <div class="container">
-            <h2 class="section-title">Certifications & Recognition</h2>
+            <div class="section-header">
+                <h2 class="section-title">Certifications & <span class="accent">Recognition</span></h2>
+                <p class="section-subtitle">Professional credentials and achievements</p>
+            </div>
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-icon redhat">
@@ -482,19 +503,19 @@
                 <div class="recognition-grid">
                     <div class="recognition-item">
                         <i class="fas fa-trophy"></i>
-                        <p><strong>Top Gun Consultant</strong> - Red Hat Services ANZ</p>
+                        <p><strong>Top Gun Consultant</strong>Red Hat Services ANZ</p>
                     </div>
                     <div class="recognition-item">
                         <i class="fas fa-award"></i>
-                        <p><strong>Most Trusted Consultant</strong> - RedHat Services ANZ</p>
+                        <p><strong>Most Trusted Consultant</strong>RedHat Services ANZ</p>
                     </div>
                     <div class="recognition-item">
                         <i class="fas fa-star"></i>
-                        <p><strong>High Performer</strong> - Every Annual Review at NAB</p>
+                        <p><strong>High Performer</strong>Every Annual Review at NAB</p>
                     </div>
                     <div class="recognition-item">
                         <i class="fas fa-medal"></i>
-                        <p><strong>S*tar Rating</strong> - 4 consecutive years at Tech Mahindra</p>
+                        <p><strong>S*tar Rating</strong>4 consecutive years at Tech Mahindra</p>
                     </div>
                 </div>
             </div>
@@ -504,8 +525,10 @@
     <!-- Blogs Section -->
     <section id="blogs" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Latest Blog Posts</h2>
-            <p class="section-subtitle">Insights on Cloud Native Technologies, DevSecOps, and Enterprise Architecture</p>
+            <div class="section-header">
+                <h2 class="section-title">Latest <span class="accent">Blog Posts</span></h2>
+                <p class="section-subtitle">Insights on Cloud Native Technologies, DevSecOps, and Enterprise Architecture</p>
+            </div>
             
             <!-- Blog Categories -->
             <div id="blog-categories" class="blog-categories">
@@ -538,12 +561,11 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+            <div class="section-header">
+                <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+                <p class="section-subtitle">I'm always open to discussing new projects and opportunities</p>
+            </div>
             <div class="contact-content">
-                <p class="contact-description">
-                    I'm always interested in discussing cloud architecture, DevSecOps strategies, 
-                    and enterprise digital transformation opportunities.
-                </p>
                 <div class="contact-methods">
                     <a href="tel:+919100656947" class="contact-card">
                         <i class="fas fa-phone"></i>
@@ -555,12 +577,12 @@
                         <h3>Email</h3>
                         <p>mallamrakesh@gmail.com</p>
                     </a>
-                    <a href="https://linkedin.com/in/rakeshkumarmallam" target="_blank" class="contact-card">
+                    <a href="https://linkedin.com/in/rakeshkumarmallam" target="_blank" rel="noopener" class="contact-card">
                         <i class="fab fa-linkedin"></i>
                         <h3>LinkedIn</h3>
                         <p>Connect with me</p>
                     </a>
-                    <a href="https://github.com/rakeshkumarmallam" target="_blank" class="contact-card">
+                    <a href="https://github.com/rmallam" target="_blank" rel="noopener" class="contact-card">
                         <i class="fab fa-github"></i>
                         <h3>GitHub</h3>
                         <p>View my projects</p>
@@ -573,10 +595,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Rakesh Kumar Mallam. All rights reserved.</p>
+            <p>&copy; 2025 Rakesh Kumar Mallam. Built with passion.</p>
             <div class="footer-links">
-                <a href="https://github.com/rakeshkumarmallam" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rmallam" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/rakeshkumarmallam" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </div>
     </footer>
