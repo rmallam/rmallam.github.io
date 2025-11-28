@@ -154,6 +154,19 @@
     }
   ],
 
+  "openSource": [
+    {
+      "name": "Skupper",
+      "repo": "skupperproject/skupper",
+      "url": "https://github.com/skupperproject/skupper",
+      "description": "Virtual Application Network enabling rich hybrid cloud communication",
+      "stars": "665+",
+      "role": "Contributor",
+      "icon": "fas fa-network-wired",
+      "highlight": true
+    }
+  ],
+
   "recognition": [
     {
       "title": "Top Gun Consultant",
