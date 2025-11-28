@@ -2,7 +2,7 @@
   "personal": {
     "name": "Rakesh Kumar Mallam",
     "firstName": "Rakesh",
-    "role": "Cloud & Platform Architect",
+    "role": "Senior Architect",
     "company": "Red Hat",
     "tagline": "Enterprise Architecture • Multi-Cloud Solutions • DevSecOps Strategy",
     "description": "15+ years architecting enterprise-scale cloud platforms and leading digital transformation. Trusted advisor specializing in OpenShift, AWS, and Azure solutions that drive measurable business outcomes.",
@@ -19,7 +19,7 @@
   },
 
   "about": {
-    "intro": "Hey there! I'm Rakesh – a <strong>Cloud & Platform Architect</strong> with <strong>15+ years</strong> of experience designing enterprise-scale solutions. Currently a <strong>Trusted Advisor</strong> at Red Hat, I help organizations architect their cloud transformation journey, turning complex requirements into elegant, scalable platforms.",
+    "intro": "Hey there! I'm Rakesh – a <strong>Senior Architect</strong> with <strong>15+ years</strong> of experience designing enterprise-scale solutions. Currently a <strong>Trusted Advisor</strong> at Red Hat, I help organizations architect their cloud transformation journey, turning complex requirements into elegant, scalable platforms.",
     "expertise": "I specialize in designing multi-cloud architectures (AWS, Azure, OpenShift) that balance performance, security, and cost. My approach: <strong>pragmatic architecture over theoretical purity</strong> – solving real problems with solutions that operations teams can actually maintain. I've architected platforms serving thousands of developers across banking, government, and enterprise sectors.",
     "personal": "When I'm not whiteboarding solutions, I'm likely planning my next travel adventure with my family, discovering new cuisines, or chasing after my little ones. I share deep-dives on architecture patterns, cloud-native technologies, and lessons learned on my blog.",
     "stats": {
