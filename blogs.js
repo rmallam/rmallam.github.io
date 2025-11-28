@@ -2,6 +2,10 @@
 // BLOG MANAGEMENT SYSTEM
 // ================================================
 
+// Base URL for fetching blog content
+// Use raw.githubusercontent.com which always works, regardless of Pages config
+const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/rmallam/rmallam.github.io/main';
+
 const blogCategories = {};
 let currentCategory = null;
 let currentBlogPost = null;
@@ -53,7 +57,7 @@ async function loadBlogStructure() {
     const categoriesContainer = document.getElementById('blog-categories');
     
     try {
-        const response = await fetch('blogs/index.json');
+        const response = await fetch(`${GITHUB_RAW_BASE}/blogs/index.json`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -193,7 +197,7 @@ async function showCategoryBlogs(category) {
 
     for (const blogFile of sortedBlogs.slice(0, maxToShow)) {
         try {
-            const response = await fetch(`blogs/${category}/${blogFile}`);
+            const response = await fetch(`${GITHUB_RAW_BASE}/blogs/${encodeURIComponent(category)}/${blogFile}`);
             
             if (!response.ok) {
                 console.warn(`Failed to load ${blogFile}`);
@@ -347,7 +351,7 @@ async function showBlogPost(category, filename) {
     document.getElementById('blog-post').style.display = 'block';
 
     try {
-        const response = await fetch(`blogs/${category}/${filename}`);
+        const response = await fetch(`${GITHUB_RAW_BASE}/blogs/${encodeURIComponent(category)}/${filename}`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
