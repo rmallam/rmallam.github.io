@@ -386,15 +386,43 @@
         </div>
     </section>
 
-    <!-- Interactive Game Section -->
+    <!-- Interactive Games Section -->
     <section id="game" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">🎮 Build Your <span class="accent">CI/CD Pipeline</span></h2>
-                <p class="section-subtitle">Think you know DevOps? Test your skills by building a complete CI/CD pipeline!</p>
+                <h2 class="section-title">🎮 DevOps <span class="accent">Arcade</span></h2>
+                <p class="section-subtitle">Test your skills with these interactive DevOps challenges!</p>
             </div>
-            
-            <div class="game-container">
+
+            <!-- Game Carousel Navigation -->
+            <div class="game-carousel-nav">
+                <button class="carousel-btn prev" id="game-prev" aria-label="Previous game">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="game-tabs">
+                    <button class="game-tab active" data-game="0">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Pipeline Builder</span>
+                    </button>
+                    <button class="game-tab" data-game="1">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud Quiz</span>
+                    </button>
+                    <button class="game-tab" data-game="2">
+                        <i class="fas fa-keyboard"></i>
+                        <span>Type Race</span>
+                    </button>
+                </div>
+                <button class="carousel-btn next" id="game-next" aria-label="Next game">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Game Carousel -->
+            <div class="game-carousel" id="game-carousel">
+                <!-- Game 1: Pipeline Builder -->
+                <div class="game-slide active" data-game="0">
+                    <div class="game-container">
                 <!-- Game Header -->
                 <div class="game-header">
                     <div class="game-stats">
@@ -475,10 +503,128 @@
             </div>
 
             <!-- How to Play -->
-            <div class="game-instructions">
-                <button id="show-instructions" class="btn-game btn-help">
-                    <i class="fas fa-question-circle"></i> How to Play
-                </button>
+                        <div class="game-instructions">
+                            <button id="show-instructions" class="btn-game btn-help">
+                                <i class="fas fa-question-circle"></i> How to Play
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 2: Cloud Quiz -->
+                <div class="game-slide" data-game="1">
+                    <div class="game-container quiz-game">
+                        <div class="game-header">
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Question: <strong id="quiz-question-num">1</strong>/10</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Score: <strong id="quiz-score">0</strong></span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Time: <strong id="quiz-time">30s</strong></span>
+                                </div>
+                            </div>
+                            <button id="reset-quiz" class="btn-game btn-reset">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+
+                        <div class="quiz-content">
+                            <div class="quiz-question" id="quiz-question">
+                                <h3>What does CI/CD stand for?</h3>
+                            </div>
+                            <div class="quiz-options" id="quiz-options">
+                                <button class="quiz-option" data-option="a">Continuous Integration / Continuous Deployment</button>
+                                <button class="quiz-option" data-option="b">Computer Integration / Computer Deployment</button>
+                                <button class="quiz-option" data-option="c">Code Integration / Code Deployment</button>
+                                <button class="quiz-option" data-option="d">Container Integration / Container Deployment</button>
+                            </div>
+                            <div class="quiz-feedback hidden" id="quiz-feedback">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Correct!</span>
+                            </div>
+                        </div>
+
+                        <div class="game-actions">
+                            <button id="start-quiz" class="btn-game btn-primary-game">
+                                <i class="fas fa-play"></i> Start Quiz
+                            </button>
+                            <button id="next-question" class="btn-game btn-next hidden">
+                                <i class="fas fa-forward"></i> Next Question
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 3: Terminal Type Race -->
+                <div class="game-slide" data-game="2">
+                    <div class="game-container type-race-game">
+                        <div class="game-header">
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-terminal"></i>
+                                    <span>Commands: <strong id="type-commands">0</strong>/10</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>WPM: <strong id="type-wpm">0</strong></span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Time: <strong id="type-time">60s</strong></span>
+                                </div>
+                            </div>
+                            <button id="reset-typerace" class="btn-game btn-reset">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+
+                        <div class="type-race-content">
+                            <div class="type-prompt">
+                                <p>Type the command below as fast as you can:</p>
+                            </div>
+                            <div class="type-command" id="type-command">
+                                <code>kubectl get pods -n production</code>
+                            </div>
+                            <div class="type-input-wrapper">
+                                <span class="type-prompt-symbol">$</span>
+                                <input type="text" id="type-input" class="type-input" placeholder="Start typing..." autocomplete="off" spellcheck="false">
+                            </div>
+                            <div class="type-feedback" id="type-feedback">
+                                <span class="correct-chars">0</span> / <span class="total-chars">0</span> characters
+                            </div>
+                        </div>
+
+                        <div class="game-actions">
+                            <button id="start-typerace" class="btn-game btn-primary-game">
+                                <i class="fas fa-play"></i> Start Race
+                            </button>
+                        </div>
+
+                        <div class="type-results hidden" id="type-results">
+                            <h3>🏁 Race Complete!</h3>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span class="stat-value" id="final-wpm">0</span>
+                                    <span class="stat-label">WPM</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span class="stat-value" id="final-accuracy">0%</span>
+                                    <span class="stat-label">Accuracy</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span class="stat-value" id="final-commands">0</span>
+                                    <span class="stat-label">Commands</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -681,6 +827,7 @@
     
     <script src="script.js"></script>
     <script src="game.js"></script>
+    <script src="games.js"></script>
     <script src="blogs.js"></script>
     <script src="terminal.js"></script>
     <script src="dataLoader.js"></script>
