@@ -365,6 +365,34 @@ function onScroll() {
 }
 
 // ================================================
+// FLOATING CONTACT WIDGET
+// ================================================
+function initContactWidget() {
+    const widget = document.getElementById('contact-widget');
+    const btn = document.getElementById('contact-widget-btn');
+    
+    if (!widget || !btn) return;
+    
+    btn.addEventListener('click', () => {
+        widget.classList.toggle('active');
+    });
+    
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!widget.contains(e.target)) {
+            widget.classList.remove('active');
+        }
+    });
+    
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            widget.classList.remove('active');
+        }
+    });
+}
+
+// ================================================
 // THEME TOGGLE (DARK/LIGHT MODE)
 // ================================================
 function initThemeToggle() {
@@ -415,6 +443,7 @@ function init() {
     initContactInteractions();
     initKeyboardNav();
     initThemeToggle();
+    initContactWidget();
     toggleScrollTopBtn = initScrollToTop();
     
     // Optional: Enable typing effect
