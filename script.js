@@ -150,18 +150,15 @@ function initScrollReveal() {
 // ================================================
 function updateHeroParallax() {
     const hero = document.querySelector('.hero');
+    const heroContent = hero?.querySelector('.hero-content');
     const scrollY = window.pageYOffset;
     
-    if (hero && scrollY < 800) {
-        const translateY = scrollY * 0.4;
-        const opacity = 1 - (scrollY / 700);
-        
-        hero.style.transform = `translateY(${translateY}px)`;
-        
-        const heroContent = hero.querySelector('.hero-content');
-        if (heroContent) {
-            heroContent.style.opacity = Math.max(0, opacity);
-        }
+    if (hero && heroContent && scrollY < 600) {
+        // Only fade the content, don't move the hero container
+        // This prevents overlap with sections below
+        const opacity = 1 - (scrollY / 500);
+        heroContent.style.opacity = Math.max(0, opacity);
+        heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
     }
 }
 
