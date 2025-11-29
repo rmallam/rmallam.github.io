@@ -38,11 +38,12 @@
       "highlights": [
         "<strong>Trusted Advisor:</strong> Architected enterprise cloud strategies for 15+ customers, aligning technical solutions with business transformation goals",
         "Designed multi-cloud reference architectures (OpenShift, ARO, ROSA) enabling 500+ developers across banking and government sectors",
+        "Implemented <strong>GitHub Actions</strong> workflows for CI/CD automation, leveraging <strong>GitHub Copilot</strong> to accelerate development velocity",
         "Architected distributed stateful services (Redis, RabbitMQ) across 12+ OpenShift clusters using Skupper, achieving 99.9% uptime",
         "Led platform architecture for ARO deployments serving 200+ microservices with GitOps-driven CI/CD (ArgoCD/Tekton)",
         "<strong>Recognition:</strong> Top Gun Consultant & Most Trusted Consultant - Red Hat Services ANZ"
       ],
-      "technologies": ["OpenShift", "Kubernetes", "AWS", "Azure", "Terraform", "ArgoCD", "Tekton"]
+      "technologies": ["OpenShift", "Kubernetes", "AWS", "Azure", "GitHub Actions", "GitHub Copilot", "Terraform", "ArgoCD"]
     },
     {
       "title": "DevOps Architect & Technical Lead",
@@ -54,7 +55,7 @@
         "Designed security-first AWS architecture with embedded DevSecOps controls, achieving SOC2 compliance",
         "Established architectural standards and patterns adopted bank-wide, mentoring 8 engineering teams"
       ],
-      "technologies": ["AWS", "Jenkins", "GitHub", "Artifactory", "React"]
+      "technologies": ["AWS", "GitHub Actions", "GitHub Enterprise", "Jenkins", "Artifactory"]
     },
     {
       "title": "DevOps Architect",
@@ -96,6 +97,11 @@
 
   "skills": [
     {
+      "category": "GitHub Ecosystem",
+      "icon": "fab fa-github",
+      "items": ["GitHub Actions", "GitHub Copilot", "GitHub Advanced Security", "GitHub Codespaces", "GitHub Projects"]
+    },
+    {
       "category": "Cloud & Containers",
       "icon": "fas fa-cloud",
       "items": ["OpenShift", "Kubernetes", "AWS", "Azure", "ECS/EKS/AKS", "Docker"]
@@ -103,7 +109,7 @@
     {
       "category": "DevOps & Automation",
       "icon": "fas fa-cogs",
-      "items": ["Jenkins", "ArgoCD", "Tekton", "Ansible", "Terraform", "Puppet", "GitHub Actions"]
+      "items": ["ArgoCD", "Tekton", "Jenkins", "Ansible", "Terraform", "Puppet"]
     },
     {
       "category": "Programming & Scripting",
